@@ -2,7 +2,7 @@ services:
   ollama:
     image: ollama/ollama
     volumes:
-      - ollama-models:/root/.ollama
+      - /Volumes/SOMA-DISK/ollama:/root/.ollama
     environment:
       - OLLAMA_NUM_PARALLEL=2
     healthcheck:
@@ -26,6 +26,3 @@ services:
       ollama:
         condition: service_healthy
     restart: unless-stopped
-
-volumes:
-  ollama-models:
